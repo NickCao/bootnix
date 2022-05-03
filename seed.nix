@@ -27,4 +27,8 @@
     url = "https://github.com/oriansj/mescc-tools-extra/archive/adc619ef8f596e3b9c40782540ec8678c6243d0d.tar.gz";
     sha256 = "sha256:1c8z647rin5cklik8vvibvsz9vr86552d17jlhc9vasywwgb7mli";
   };
+  mes = builtins.fetchurl {
+    url = "https://ftp.gnu.org/gnu/mes/mes-0.24.tar.gz";
+    sha256 = "sha256:00lrpm4x5qg0l840zhbf9mr67mqhp8gljcl24j5dy0y109gf32w2";
+  };
 }
