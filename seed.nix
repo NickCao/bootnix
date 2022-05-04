@@ -31,4 +31,12 @@
     url = "https://ftp.gnu.org/gnu/mes/mes-0.24.tar.gz";
     sha256 = "sha256:00lrpm4x5qg0l840zhbf9mr67mqhp8gljcl24j5dy0y109gf32w2";
   };
+  nyacc = builtins.fetchTarball {
+    url = "http://download.savannah.nongnu.org/releases/nyacc/nyacc-1.06.8.tar.gz";
+    sha256 = "sha256:09w5jrrybvvabalgjzcaq1z6z6wkbsxnd14wgwv0flca04cqy2sx";
+  };
+  gash = builtins.fetchTarball {
+    url = "http://download.savannah.nongnu.org/releases/gash/gash-0.3.0.tar.gz";
+    sha256 = "sha256:1zfpvv46ykys1wi71w9w7a3lv95cq1ivanrlqx9lyfmj7nr3dabf";
+  };
 }

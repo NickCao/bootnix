@@ -18,12 +18,7 @@ derivation {
       cd mes-0.24/
       cp mes/module/srfi/srfi-9-struct.mes mes/module/srfi/srfi-9.mes
       cp mes/module/srfi/srfi-9/gnu-struct.mes mes/module/srfi/srfi-9/gnu.mes
-      cp lib/tests/dirent/readdir.dir/file lib/tests/dirent/readdir.dir/link
       kaem --verbose --strict --file kaem.run
-      mkdir ''${out}
-      mkdir ''${out}/bin
-      cp bin/mes ''${out}/bin/mes
-      chmod 0755 ''${out}/bin/mes
     '')
   ];
   src = "${seed.mes}";
