@@ -28,8 +28,8 @@
     sha256 = "sha256:1c8z647rin5cklik8vvibvsz9vr86552d17jlhc9vasywwgb7mli";
   };
   mes = builtins.fetchurl {
-    url = "https://ftp.gnu.org/gnu/mes/mes-0.24.tar.gz";
-    sha256 = "sha256:00lrpm4x5qg0l840zhbf9mr67mqhp8gljcl24j5dy0y109gf32w2";
+    url = "https://github.com/oriansj/mes-m2/archive/dad1744fa80f52b3b428803c06b09d39c285f500.tar.gz";
+    sha256 = "sha256:155hnqaw44ddz2q0bphjqyaq29a8b75ahwd50zv1zakarp8i9nm8";
   };
   nyacc = builtins.fetchTarball {
     url = "https://download.savannah.gnu.org/releases/nyacc/nyacc-1.00.2.tar.gz";
