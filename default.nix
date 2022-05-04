@@ -173,6 +173,93 @@ derivation {
       mescc lib/linux/stat.c
       catm  lib/x86-mes/libc+tcc.a lib/x86-mes/libc.a islower.o isupper.o tolower.o toupper.o abtod.o dtoab.o search-path.o execvp.o fclose.o fdopen.o ferror.o fflush.o fopen.o fprintf.o fread.o fseek.o ftell.o fwrite.o printf.o remove.o snprintf.o sprintf.o sscanf.o vfprintf.o vprintf.o vsnprintf.o vsprintf.o vsscanf.o calloc.o qsort.o strtod.o strtof.o strtol.o strtold.o strtoll.o strtoul.o strtoull.o memmem.o strcat.o strchr.o strlwr.o strncpy.o strrchr.o strstr.o strupr.o sigaction.o ldexp.o mprotect.o localtime.o sigemptyset.o setjmp.o close.o rmdir.o stat.o
       catm  lib/x86-mes/libc+tcc.s lib/x86-mes/libc.s islower.s isupper.s tolower.s toupper.s abtod.s dtoab.s search-path.s execvp.s fclose.s fdopen.s ferror.s fflush.s fopen.s fprintf.s fread.s fseek.s ftell.s fwrite.s printf.s remove.s snprintf.s sprintf.s sscanf.s vfprintf.s vprintf.s vsnprintf.s vsprintf.s vsscanf.s calloc.s qsort.s strtod.s strtof.s strtol.s strtold.s strtoll.s strtoul.s strtoull.s memmem.s strcat.s strchr.s strlwr.s strncpy.s strrchr.s strstr.s strupr.s sigaction.s ldexp.s mprotect.s localtime.s sigemptyset.s setjmp.s close.s rmdir.s stat.s
+
+      mkdir ${out} ${out}/lib ${out}/include
+      mkdir ${out}/lib/linux ${out}/include/mes ${out}/include/sys ${out}/include/linux
+      mkdir ${out}/lib/x86-mes ${out}/lib/linux/x86-mes ${out}/include/linux/x86
+
+      cp lib/x86-mes/libc.a ${out}/lib/x86-mes/
+      cp lib/x86-mes/libc+tcc.a ${out}/lib/x86-mes/
+      cp lib/x86-mes/libmescc.a ${out}/lib/x86-mes/
+      cp lib/x86-mes/libc.s ${out}/lib/x86-mes/
+      cp lib/x86-mes/libc+tcc.s ${out}/lib/x86-mes/
+      cp lib/x86-mes/libmescc.s ${out}/lib/x86-mes/
+      cp lib/x86-mes/x86.M1 ${out}/lib/x86-mes/
+      cp crt1.o ${out}/lib/x86-mes/
+      cp crt1.s ${out}/lib/x86-mes/
+      cp lib/linux/x86-mes/elf32-footer-single-main.hex2 ${out}/lib/linux/x86-mes/
+      cp lib/linux/x86-mes/elf32-header.hex2 ${out}/lib/linux/x86-mes/
+
+      # Install header files
+      cp include/alloca.h ${out}/alloca.h
+      cp include/argz.h ${incdir}/argz.h
+      cp include/ar.h ${incdir}/ar.h
+      cp include/assert.h ${incdir}/assert.h
+      cp include/ctype.h ${incdir}/ctype.h
+      cp include/dirent.h ${incdir}/dirent.h
+      cp include/dirstream.h ${incdir}/dirstream.h
+      cp include/dlfcn.h ${incdir}/dlfcn.h
+      cp include/endian.h ${incdir}/endian.h
+      cp include/errno.h ${incdir}/errno.h
+      cp include/fcntl.h ${incdir}/fcntl.h
+      cp include/features.h ${incdir}/features.h
+      cp include/float.h ${incdir}/float.h
+      cp include/getopt.h ${incdir}/getopt.h
+      cp include/grp.h ${incdir}/grp.h
+      cp include/inttypes.h ${incdir}/inttypes.h
+      cp include/libgen.h ${incdir}/libgen.h
+      cp include/limits.h ${incdir}/limits.h
+      cp include/locale.h ${incdir}/locale.h
+      cp include/math.h ${incdir}/math.h
+      cp include/memory.h ${incdir}/memory.h
+      cp include/pwd.h ${incdir}/pwd.h
+      cp include/setjmp.h ${incdir}/setjmp.h
+      cp include/signal.h ${incdir}/signal.h
+      cp include/stdarg.h ${incdir}/stdarg.h
+      cp include/stdbool.h ${incdir}/stdbool.h
+      cp include/stddef.h ${incdir}/stddef.h
+      cp include/stdint.h ${incdir}/stdint.h
+      cp include/stdio.h ${incdir}/stdio.h
+      cp include/stdlib.h ${incdir}/stdlib.h
+      cp include/stdnoreturn.h ${incdir}/stdnoreturn.h
+      cp include/string.h ${incdir}/string.h
+      cp include/strings.h ${incdir}/strings.h
+      cp include/termio.h ${incdir}/termio.h
+      cp include/time.h ${incdir}/time.h
+      cp include/unistd.h ${incdir}/unistd.h
+
+      cp include/linux/syscall.h ${incdir}/linux/syscall.h
+      cp include/linux/x86/syscall.h ${incdir}/linux/x86/syscall.h
+
+      cp include/mes/builtins.h ${incdir}/mes/builtins.h
+      cp include/mes/cc.h ${incdir}/mes/cc.h
+      catm ${incdir}/mes/config.h
+      cp include/mes/constants.h ${incdir}/mes/constants.h
+      cp include/mes/lib.h ${incdir}/mes/lib.h
+      cp include/mes/lib-mini.h ${incdir}/mes/lib-mini.h
+      cp include/mes/mes.h ${incdir}/mes/mes.h
+      cp include/mes/symbols.h ${incdir}/mes/symbols.h
+
+      cp include/sys/cdefs.h ${incdir}/sys/cdefs.h
+      cp include/sys/dir.h ${incdir}/sys/dir.h
+      cp include/sys/file.h ${incdir}/sys/file.h
+      cp include/sys/ioctl.h ${incdir}/sys/ioctl.h
+      cp include/sys/mman.h ${incdir}/sys/mman.h
+      cp include/sys/param.h ${incdir}/sys/param.h
+      cp include/sys/resource.h ${incdir}/sys/resource.h
+      cp include/sys/select.h ${incdir}/sys/select.h
+      cp include/sys/stat.h ${incdir}/sys/stat.h
+      cp include/sys/timeb.h ${incdir}/sys/timeb.h
+      cp include/sys/time.h ${incdir}/sys/time.h
+      cp include/sys/times.h ${incdir}/sys/times.h
+      cp include/sys/types.h ${incdir}/sys/types.h
+      cp include/sys/ucontext.h ${incdir}/sys/ucontext.h
+      cp include/sys/user.h ${incdir}/sys/user.h
+      cp include/sys/wait.h ${incdir}/sys/wait.h
+
+      # Checksums
+      cd ${sysa}/${MES_PKG}
+      sha256sum -c checksums
     '')
   ];
   src = "${seed.mes}";
