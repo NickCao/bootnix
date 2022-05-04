@@ -32,8 +32,8 @@
     sha256 = "sha256:00lrpm4x5qg0l840zhbf9mr67mqhp8gljcl24j5dy0y109gf32w2";
   };
   nyacc = builtins.fetchTarball {
-    url = "http://download.savannah.nongnu.org/releases/nyacc/nyacc-1.06.8.tar.gz";
-    sha256 = "sha256:09w5jrrybvvabalgjzcaq1z6z6wkbsxnd14wgwv0flca04cqy2sx";
+    url = "https://download.savannah.gnu.org/releases/nyacc/nyacc-1.00.2.tar.gz";
+    sha256 = "sha256:06rg6pn4k8smyydwls1abc9h702cri3z65ac9gvc4rxxklpynslk";
   };
   gash = builtins.fetchTarball {
     url = "http://download.savannah.nongnu.org/releases/gash/gash-0.3.0.tar.gz";
